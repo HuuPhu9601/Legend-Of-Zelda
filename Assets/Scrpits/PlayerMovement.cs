@@ -9,8 +9,13 @@ public class PlayerMovement : MonoBehaviour
 
     //Biến lưu vị trí thay đổi của nhân vật
     private Vector3 change;
+
+    //Xử lý điều khiển animon nhân vật  
+    private Animator animator;
     void Start()
     {
+        //khởi tạo animator
+        animator = GetComponent<Animator>();
         //khoi tạo rigidbofdy
         myRigidbody = GetComponent<Rigidbody2D>();
     }
@@ -22,10 +27,22 @@ public class PlayerMovement : MonoBehaviour
         //Thay bằng hàm GetAxisRaw sẽ tăng nhanh từ 0 leen1 chứ k từ từ như GetAxis
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
+        UpdateAnimationAndMove();
+    }
+    //Hàm xử lý animation và chuyển động    
+    void UpdateAnimationAndMove()
+    {
         if (change != Vector3.zero)
         {
             MoveCharacter();
+            //Phát chuyển động
+            //Sử dụng hàm setfloat để gán giá trị cho param tạo trong animator
+            animator.SetFloat("moveX", change.x);
+            animator.SetFloat("moveY", change.y);
+            animator.SetBool("moving", true);
         }
+        else
+            animator.SetBool("moving", false);
     }
 
     void MoveCharacter()
