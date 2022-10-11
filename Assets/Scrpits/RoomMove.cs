@@ -1,11 +1,22 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class RoomMove : MonoBehaviour
 {
+    //truyền vào vector2 vị trí cam thay đổi
     public Vector2 cameraChange;
+    //truyền vào vị trí player thay đổi
     public Vector3 playerChange;
     private CameraMovement cam;
+    public bool needText;
+    //chuỗi chuyền vào tên phòng
+    public string placeName;
+    //Truyền vào thẻ Text
+    public GameObject text;
 
+    public TextMeshProUGUI placeText;
     private void Start()
     {
         //Khởi tạo cam bằng hàm getcomponent
@@ -23,8 +34,20 @@ public class RoomMove : MonoBehaviour
             cam.maxPosition += cameraChange;
             //gán lại vị trí collider other cộng thêm vị trí player thay đổi
             other.transform.position += playerChange;
-
+            //Gán tên phòng
+            if (needText)
+            {
+                StartCoroutine(PlaceNameCo());
+            }
         }
 
+    }
+
+    private IEnumerator PlaceNameCo()
+    {
+        text.SetActive(true);
+        placeText.text = placeName;
+        yield return new WaitForSeconds(4f);// chờ 4s
+        text.SetActive(false);
     }
 }
