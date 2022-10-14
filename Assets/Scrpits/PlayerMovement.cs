@@ -1,7 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+
+public enum PlayerState
+{
+    walk,
+    attack,
+    interact
+}
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerState currentState;
+
     //Tốc độ di chuyển
     public float speed;
 
@@ -14,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     void Start()
     {
+        //gán currentstate bằng walk
+        currentState = PlayerState.walk;
         //khởi tạo animator
         animator = GetComponent<Animator>();
         //khoi tạo rigidbofdy
@@ -27,8 +39,37 @@ public class PlayerMovement : MonoBehaviour
         //Thay bằng hàm GetAxisRaw sẽ tăng nhanh từ 0 leen1 chứ k từ từ như GetAxis
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        UpdateAnimationAndMove();
+        //Kiểm tra điều khiển đầu vào có phải attack bằng hàm buttondown - - truyền vào tên phím
+        if (Input.GetButtonDown("Attack") && currentState != PlayerState.attack)
+        {
+            //Gọi hàm thực hiện tấn công
+            StartCoroutine(AttackCo());
+        }
+
+        //Kiểm tra currentstate bằng walk thì mới cho di chuyển và anim
+        else if (currentState == PlayerState.walk)
+        {
+            UpdateAnimationAndMove();
+        }
+        
     }
+
+    //Hàm thực hiện tấn công và anim
+    private IEnumerator AttackCo()
+    {
+        //Thực hiển chuyển động tấn công bằng cách bật param attack
+        animator.SetBool("attacking", true);
+        //Set trangk thái hiện tại là tấn công
+        currentState = PlayerState.attack;
+        yield return null;
+        //Sau khi thực hiện tấn công và qua return trả về sẽ tắt anim tấn công
+        animator.SetBool("attacking", false);
+        //Sau đó lại đợi và giây
+        yield return new WaitForSeconds(0.3f);
+        //Sau khi đợi 0.33s thì sẽ sét trạng thái hiện tại về đi bộ
+        currentState = PlayerState.walk;
+    }
+
     //Hàm xử lý animation và chuyển động    
     void UpdateAnimationAndMove()
     {
