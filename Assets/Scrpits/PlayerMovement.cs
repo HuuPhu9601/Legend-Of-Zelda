@@ -30,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         //khoi tạo rigidbofdy
         myRigidbody = GetComponent<Rigidbody2D>();
+        //Gán cho param moveX = 0
+        animator.SetFloat("moveX", 0);
+        animator.SetFloat("moveY", -1);
     }
 
     void Update()
@@ -93,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
         //Vì để còn truyền vào vị trí của nhân vật position(Vector3)
         //công thức di chuyển vận tốc nhân vật
         //Vị trí ban đầu(transform.position) + vị trí tiếp theo nhận dữ liệu từ bàn phím(change_vector3) * tốc độ(speed) * thời gian thực (Time.deltaTime)
+        change.Normalize();//Giúp nhân vật khi di chuyển chéo k bị đi nhanh hơn mà sẽ giống nhau đi ngang dọc
         myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
     }
 }
