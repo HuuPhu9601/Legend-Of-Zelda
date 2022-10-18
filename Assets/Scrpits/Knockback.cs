@@ -16,6 +16,8 @@ public class Knockback : MonoBehaviour
             Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
             if (enemy != null)
             {
+                //Gán trạng thái của enemy bằng loạng choạng
+                enemy.GetComponent<Enemy>().currentState = EnemyState.stagger;
                 Vector2 defference = enemy.transform.position - transform.position;
                 defference = defference.normalized * thrust;
                 //Hàm AddForce() là hàm thêm lực
@@ -31,6 +33,7 @@ public class Knockback : MonoBehaviour
         {
             yield return new WaitForSeconds(knockTime);
             enemy.velocity = Vector2.zero;
+            enemy.GetComponent<Enemy>().currentState = EnemyState.idle;
         }
 
     }
