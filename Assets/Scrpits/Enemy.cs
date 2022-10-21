@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 //Tạo ra một enum để quản lý trạng thái của enemy
 public enum EnemyState
@@ -19,13 +20,19 @@ public class Enemy : MonoBehaviour
     public int baseAttack;
     public float moveSpeed;
 
-    void Start()
+    public void Knock(Rigidbody2D myRigidbody, float knockTime)
     {
-        
+        StartCoroutine(KnockCo(myRigidbody, knockTime));
     }
-
-    void Update()
+    private IEnumerator KnockCo(Rigidbody2D myRigidbody,float knockTime)
     {
-        
+        if (myRigidbody != null)
+        {
+            yield return new WaitForSeconds(knockTime);
+            myRigidbody.velocity = Vector2.zero;
+            currentState = EnemyState.idle;
+            myRigidbody.velocity = Vector2.zero;
+        }
+
     }
 }
