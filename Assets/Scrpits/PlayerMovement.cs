@@ -24,6 +24,11 @@ public class PlayerMovement : MonoBehaviour
 
     //Xử lý điều khiển animon nhân vật  
     private Animator animator;
+
+    //Tạo một scriptable floatValue để tiện cấu hình
+    public FloatValue currentHealth;
+
+    public HealthSignal playerHealthSignal;
     void Start()
     {
         //gán currentstate bằng walk
@@ -56,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         {
             UpdateAnimationAndMove();
         }
-        
+
     }
 
     //Hàm thực hiện tấn công và anim
@@ -102,9 +107,14 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
     }
 
-    public void Knock(float knockTime)
+    public void Knock(float knockTime, float damage)
     {
-        StartCoroutine(KnockCo(knockTime));
+        currentHealth.initialValue -= damage;
+        if (currentHealth.initialValue > 0)
+        {
+            playerHealthSignal.Raise();
+            StartCoroutine(KnockCo(knockTime));
+        }
     }
 
     //Thêm hàm để xử lý enemy tác động nên player
