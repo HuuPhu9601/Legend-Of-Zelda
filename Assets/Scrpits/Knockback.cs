@@ -6,7 +6,8 @@ public class Knockback : MonoBehaviour
 {
     public float thrust;
     public float knockTime;
-
+    //lượng đam
+    public float damage;
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Kiểm tra tag của vật thể va chạm để phá vỡ chiếc bình và chỉ player mới đước đánh vỡ chiếc bình
@@ -28,11 +29,11 @@ public class Knockback : MonoBehaviour
                 //Hàm AddForce() là hàm thêm lực
                 hit.AddForce(defference, ForceMode2D.Impulse);
                 //Kiểm tra nếu đối tượng là enemy
-                if (other.gameObject.CompareTag("enemy"))
+                if (other.gameObject.CompareTag("enemy") && other.isTrigger)
                 {
                     //Gán trạng thái của enemy bằng loạng choạng
                     hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
-                    other.GetComponent<Enemy>().Knock(hit, knockTime);
+                    other.GetComponent<Enemy>().Knock(hit, knockTime,damage);
                 }
                 //Kiểm tra nếu là player
                 if (other.gameObject.CompareTag("Player"))

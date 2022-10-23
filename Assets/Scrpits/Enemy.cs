@@ -14,17 +14,35 @@ public class Enemy : MonoBehaviour
 {
     //Khai báo enum
     public EnemyState currentState;
-
-    public int health;
+    //Khai báo một ScriptableObject là sức khỏe lớn nhất
+    public FloatValue maxHealth;
+    public float health;
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
 
-    public void Knock(Rigidbody2D myRigidbody, float knockTime)
+    private void Awake()
+    {
+        health = maxHealth.initialValue;
+    }
+
+    //Hàm xử lý gây damage
+    private void TakeDamage(float damage)
+    {
+        health -= damage;
+        //Nếu đã hết máu thì enemy không hoạt động nữa
+        if (health <= 0)
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+
+    public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage)//them dame
     {
         StartCoroutine(KnockCo(myRigidbody, knockTime));
+        TakeDamage(damage);
     }
-    private IEnumerator KnockCo(Rigidbody2D myRigidbody,float knockTime)
+    private IEnumerator KnockCo(Rigidbody2D myRigidbody, float knockTime)
     {
         if (myRigidbody != null)
         {
