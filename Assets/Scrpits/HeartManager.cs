@@ -14,6 +14,8 @@ public class HeartManager : MonoBehaviour
 
     //Khái báo số lượng hộp chứa trái tim
     public FloatValue heartContainers;
+    //Giá trị sức khỏe hiện tại của player
+    public FloatValue playerCurrentHealth;
 
     void Start()
     {
@@ -27,6 +29,28 @@ public class HeartManager : MonoBehaviour
         {
             hearts[i].gameObject.SetActive(true);
             hearts[i].sprite = fullHeart;
+        }
+    }
+
+    //Hàm cập nhật giá trị sức khỏe của player
+    public void UpdateHearts()
+    {
+        float tempHealth = playerCurrentHealth.runtimeValue / 2;
+        //Thực hiện so sánh sức khỏe hiện tại và sức khỏe tối đa mà player có
+        for (int i = 0; i < playerCurrentHealth.runtimeValue; i++)
+        {
+            if (i <= tempHealth - 1)//Đầy máu
+            {
+                hearts[i].sprite = fullHeart;
+            }
+            else if (i >= tempHealth) //Hết máu
+            {
+                hearts[i].sprite = emptyHeart;
+            }
+            else //Nửa máu
+            {
+                hearts[i].sprite = halfFullHeart;
+            }
         }
     }
 }
