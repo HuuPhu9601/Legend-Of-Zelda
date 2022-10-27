@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Knockback : MonoBehaviour
 {
@@ -10,14 +8,14 @@ public class Knockback : MonoBehaviour
     public float damage;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Kiểm tra tag của vật thể va chạm để phá vỡ chiếc bình và chỉ player mới đước đánh vỡ chiếc bình
+        //Kiểm tra tag của vật thể va chạm để phá vỡ chiếc bình và chỉ đòn đánh player mới đước đánh vỡ chiếc bình
         if (other.gameObject.CompareTag("breakable") && this.gameObject.CompareTag("Player"))
         {
             //Gọi hàm Smash từ lớp pot
             other.GetComponent<Pot>().Smash();
         }
 
-        //Kiểm tra nếu va chạm phải nhân vật có tag là enemy hoặc là player (áp dụng cho enemy đánh player)
+        //Kiểm tra nếu va chạm phải nhân vật có tag là enemy hoặc là đòn đánh của player (áp dụng cho enemy đánh player)
         if (other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("Player"))
         {
             //khởi tạo một rigidbody2d
@@ -35,7 +33,7 @@ public class Knockback : MonoBehaviour
                     hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
                     other.GetComponent<Enemy>().Knock(hit, knockTime,damage);
                 }
-                //Kiểm tra nếu là player
+                //Kiểm tra nếu là đòn đánh của player
                 if (other.gameObject.CompareTag("Player"))
                 {
                     if (other.GetComponent<PlayerMovement>().currentState != PlayerState.stagger)

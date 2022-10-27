@@ -35,9 +35,10 @@ public class HeartManager : MonoBehaviour
     //Hàm cập nhật giá trị sức khỏe của player
     public void UpdateHearts()
     {
-        float tempHealth = playerCurrentHealth.runtimeValue / 2;
+        //Số máu và số mạng bằng nhau
+        float tempHealth = playerCurrentHealth.runtimeValue;
         //Thực hiện so sánh sức khỏe hiện tại và sức khỏe tối đa mà player có
-        for (int i = 0; i < playerCurrentHealth.runtimeValue; i++)
+        for (int i = 0; i < playerCurrentHealth.initialValue; i++)
         {
             if (i <= tempHealth - 1)//Đầy máu
             {
@@ -52,5 +53,7 @@ public class HeartManager : MonoBehaviour
                 hearts[i].sprite = halfFullHeart;
             }
         }
+
+
     }
 }

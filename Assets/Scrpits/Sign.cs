@@ -11,31 +11,31 @@ public class Sign : MonoBehaviour
     //Cờ nhận biết player trong vùng trigger
     public bool playerInRange;
 
-    private void Update()
+    private void FixedUpdate()
     {
         //Nhận điều khiển từ phím space truyền vào và nhân vật trong vùng va chạm
-        if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
+        //Input.GetKeyDown(KeyCode.Space)
+        if (playerInRange)
         {
-            //Kiểm tra nếu hộp đang mở hay không??
-            if (dialogBox.activeInHierarchy)
-            {
-                //Đóng hoạt động của hộp
-                dialogBox.SetActive(false);
-            }
-            else
-            {
-                //Mở hoạt động của hộp
-                dialogBox.SetActive(true);
-                //Set text bằng chuỗi truyền vào
-                dialogText.text = dialog;
-            }
+            ////Kiểm tra nếu hộp đang mở hay không??
+            //if (dialogBox.activeInHierarchy)
+            //{
+            //    //Đóng hoạt động của hộp
+            //    dialogBox.SetActive(false);
+            //}
+            //else
+            //{
+            //Mở hoạt động của hộp
+            dialogBox.SetActive(true);
+            //Set text bằng chuỗi truyền vào
+            dialogText.text = dialog;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Kiểm tra có đúng tag va chạm hay không?
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.isTrigger)
         {
             //set true
             playerInRange = true;
@@ -44,7 +44,7 @@ public class Sign : MonoBehaviour
     //Hàm để nhân biết khi nào vật thể thoát va chạm
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.isTrigger)
         {
             //set false
             playerInRange = false;

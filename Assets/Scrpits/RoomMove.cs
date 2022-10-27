@@ -26,8 +26,8 @@ public class RoomMove : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //So sánh tag dùng hàm compareTag của collider2d
-        //Nếu tag chạm vào là player thì sẽ thay đổi vị trí của máy ảnh
-        if (other.CompareTag("Player"))
+        //Nếu tag chạm vào là player thì sẽ thay đổi vị trí của máy ảnh và collider k phải là trigger
+        if (other.CompareTag("Player") && !other.isTrigger)
         {
             //thêm vị trí min và max của camera
             cam.minPosition += cameraChange;
