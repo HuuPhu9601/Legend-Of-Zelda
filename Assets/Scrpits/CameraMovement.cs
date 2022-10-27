@@ -9,6 +9,13 @@ public class CameraMovement : MonoBehaviour
     //Tạo ra điểm min của camera
     public Vector2 minPosition;
 
+    private void Start()
+    {
+        //gán vị trí cam bằng vị trí nhân vật
+        //Tạo vector mới để cam trỏ thằng trục z của chính nó, nếu k sẽ k nhìn thấy gì kể cả bản đồ
+        transform.position = new Vector3(target.position.x,target.position.y,transform.position.z);
+    }
+
     private void LateUpdate()
     {
         //Nếu vị trí cam khác với vị trí target(player)

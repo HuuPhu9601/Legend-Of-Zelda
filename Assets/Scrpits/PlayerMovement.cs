@@ -29,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
     public FloatValue currentHealth;
 
     public HealthSignal playerHealthSignal;
+
+    //Lưu vị trí bắt đầu của nhân vật
+    public VectorValue startingPosition;
+
     void Start()
     {
         //gán currentstate bằng walk
@@ -37,9 +41,20 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         //khoi tạo rigidbofdy
         myRigidbody = GetComponent<Rigidbody2D>();
-        //Gán cho param moveX = 0
-        animator.SetFloat("moveX", 0);
-        animator.SetFloat("moveY", -1);
+        //Gán vị trí bắt đầu
+        transform.position = startingPosition.runtimeValue;
+        //Kiểm tra nếu  vào trong nhà thì nhân vật sẽ quay đầu vào bên trong
+        if (transform.position.x == 0.5 && transform.position.y == -4)
+        {
+            animator.SetFloat("moveX", 0);
+            animator.SetFloat("moveY", 1);
+        }
+        else
+        {
+            //Gán cho param moveX = 0
+            animator.SetFloat("moveX", 0);
+            animator.SetFloat("moveY", -1);
+        }
     }
 
     void Update()
