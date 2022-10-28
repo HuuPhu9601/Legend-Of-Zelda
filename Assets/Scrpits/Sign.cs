@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Sign : MonoBehaviour
 {
+    public HealthSignal contextOn;
+    public HealthSignal contextOff;
+
     //Tạo hộp thông báo
     public GameObject dialogBox;
     //Tạo text
@@ -15,7 +18,7 @@ public class Sign : MonoBehaviour
     {
         //Nhận điều khiển từ phím space truyền vào và nhân vật trong vùng va chạm
         //Input.GetKeyDown(KeyCode.Space)
-        if (playerInRange)
+        if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
             ////Kiểm tra nếu hộp đang mở hay không??
             //if (dialogBox.activeInHierarchy)
@@ -38,6 +41,7 @@ public class Sign : MonoBehaviour
         if (other.CompareTag("Player") && !other.isTrigger)
         {
             //set true
+            contextOn.Raise();
             playerInRange = true;
         }
     }
@@ -47,6 +51,7 @@ public class Sign : MonoBehaviour
         if (other.CompareTag("Player") && !other.isTrigger)
         {
             //set false
+            contextOff.Raise();
             playerInRange = false;
             //hủy hoạt động của hộp thoại
             dialogBox.SetActive(false);
