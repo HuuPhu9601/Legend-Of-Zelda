@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class Sign : MonoBehaviour
 {
-    public HealthSignal contextOn;
-    public HealthSignal contextOff;
+    public HealthSignal context;
 
     //Tạo hộp thông báo
     public GameObject dialogBox;
@@ -41,7 +40,7 @@ public class Sign : MonoBehaviour
         if (other.CompareTag("Player") && !other.isTrigger)
         {
             //set true
-            contextOn.Raise();
+            context.Raise();
             playerInRange = true;
         }
     }
@@ -51,7 +50,7 @@ public class Sign : MonoBehaviour
         if (other.CompareTag("Player") && !other.isTrigger)
         {
             //set false
-            contextOff.Raise();
+            context.Raise();
             playerInRange = false;
             //hủy hoạt động của hộp thoại
             dialogBox.SetActive(false);

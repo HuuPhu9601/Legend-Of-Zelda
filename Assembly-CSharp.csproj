@@ -65,13 +65,13 @@
     <Compile Include="Assets\Scrpits\SceneTransition.cs" />
     <Compile Include="Assets\Scrpits\SignalListener.cs" />
     <Compile Include="Assets\Scrpits\Player Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scrpits\Player Scripts\ContextClue.cs" />
     <Compile Include="Assets\Scrpits\Pot.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\FloatValue.cs" />
     <Compile Include="Assets\Scrpits\Player Scripts\HeartManager.cs" />
     <Compile Include="Assets\Scrpits\Enemy.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\VectorValue.cs" />
     <Compile Include="Assets\Scrpits\RoomMove.cs" />
-    <Compile Include="Assets\Scrpits\Player Scripts\ContextClue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

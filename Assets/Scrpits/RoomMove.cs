@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class RoomMove : MonoBehaviour
 {
+    //Tạo ra 2 vector2 để lưu giới hạn nhỏ nhất và lớn nhất của cam có thể thay đổi và gán chúng và min-max position của cam
+    //public Vector2 cameraMinChange;
+    //public Vector2 cameraMaxChange;
+
     //truyền vào vector2 vị trí cam thay đổi
     public Vector2 cameraChange;
     //truyền vào vị trí player thay đổi
