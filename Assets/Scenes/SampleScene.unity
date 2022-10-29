@@ -66196,6 +66196,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1480408127, guid: 44dc739afcb263643b36e8e135723e55, type: 3}
+      propertyPath: signal
+      value: 
+      objectReference: {fileID: 11400000, guid: 46c1d7af26a935f439d93a45e51b9f86, type: 2}
+    - target: {fileID: 1480408127, guid: 44dc739afcb263643b36e8e135723e55, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeContext
+      objectReference: {fileID: 0}
     - target: {fileID: 799873343837425077, guid: 44dc739afcb263643b36e8e135723e55, type: 3}
       propertyPath: m_Name
       value: Player
@@ -66244,7 +66252,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1480408128, guid: 44dc739afcb263643b36e8e135723e55, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 44dc739afcb263643b36e8e135723e55, type: 3}
 --- !u!1001 &1706791356886729768
 PrefabInstance:
@@ -66253,6 +66262,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 942230432, guid: 38efa54e92a219b44a5eed0ca434e633, type: 3}
+      propertyPath: context
+      value: 
+      objectReference: {fileID: 11400000, guid: 46c1d7af26a935f439d93a45e51b9f86, type: 2}
     - target: {fileID: 942230432, guid: 38efa54e92a219b44a5eed0ca434e633, type: 3}
       propertyPath: dialogBox
       value: 

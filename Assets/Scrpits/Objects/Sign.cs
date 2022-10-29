@@ -1,17 +1,15 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class Sign : MonoBehaviour
+public class Sign : Interactable
 {
-    public HealthSignal context;
-
+    
     //Tạo hộp thông báo
     public GameObject dialogBox;
     //Tạo text
     public TextMeshProUGUI dialogText;
     public string dialog;
-    //Cờ nhận biết player trong vùng trigger
-    public bool playerInRange;
+   
 
     private void FixedUpdate()
     {
@@ -34,18 +32,8 @@ public class Sign : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        //Kiểm tra có đúng tag va chạm hay không?
-        if (other.CompareTag("Player") && !other.isTrigger)
-        {
-            //set true
-            context.Raise();
-            playerInRange = true;
-        }
-    }
     //Hàm để nhân biết khi nào vật thể thoát va chạm
-    private void OnTriggerExit2D(Collider2D other)
+    protected override void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
