@@ -57,6 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scrpits\Log.cs" />
+    <Compile Include="Assets\Scrpits\ScriptableObjects\Inventory.cs" />
+    <Compile Include="Assets\Scrpits\ScriptableObjects\Item.cs" />
+    <Compile Include="Assets\Scrpits\Objects\TreasureChest.cs" />
+    <Compile Include="Assets\Scrpits\Interactable.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\HealthSignal.cs" />
     <Compile Include="Assets\Scrpits\Player Scripts\PlayerHit.cs" />
     <Compile Include="Assets\Scrpits\Objects\Sign.cs" />
@@ -72,7 +76,6 @@
     <Compile Include="Assets\Scrpits\Enemy.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\VectorValue.cs" />
     <Compile Include="Assets\Scrpits\Objects\RoomMove.cs" />
-    <Compile Include="Assets\Scrpits\Interactable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

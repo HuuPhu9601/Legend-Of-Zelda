@@ -32,6 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
     //Lưu vị trí bắt đầu của nhân vật
     public VectorValue startingPosition;
+    //Khai báo túi đựng cua nhân vật
+    public Inventory playerInventory;
+
+    //Khai báo một bộ render hình ảnh
+    public SpriteRenderer receiveItemSprite;
 
     void Start()
     {
@@ -59,6 +64,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        //Is the player in an interaction (Là người chơi trong một tương tác)
+        if (currentState == PlayerState.interact)
+        {
+            return;
+        }
+
         change = Vector2.zero;
         //Nhập dữ liệu điều khiển vào bàn phím bằng hàm Input.getAxis()
         //Thay bằng hàm GetAxisRaw sẽ tăng nhanh từ 0 leen1 chứ k từ từ như GetAxis
@@ -91,7 +102,41 @@ public class PlayerMovement : MonoBehaviour
         //Sau đó lại đợi và giây
         yield return new WaitForSeconds(0.3f);
         //Sau khi đợi 0.33s thì sẽ sét trạng thái hiện tại về đi bộ
-        currentState = PlayerState.walk;
+        if (currentState != PlayerState.interact)
+        {
+            currentState = PlayerState.walk;
+        }
+    }
+
+    //Hàm xử lý nhặt item
+    public void RaiseItem()
+    {
+        //Kiểm tra nếu túi có item
+        if (playerInventory.currentItem != null)
+        {
+
+            //Nếu trạng thái hiện tại khác interact thì thực hiện hđ nhặt chìa khóa
+            if (currentState != PlayerState.interact)
+            {
+                //Kích hoạt animation nâng chìa khóa
+                animator.SetBool("receiveItem", true);
+                //set trang thai hiện tại là interact
+                currentState = PlayerState.interact;
+                //Thêm hình ảnh item hiện tại vào bộ render hình ảnh
+                receiveItemSprite.sprite = playerInventory.currentItem.itemSprite;
+            }
+            else //ngược lại
+            {
+                //Tắt kích hoạt animation nâng chìa khóa
+                animator.SetBool("receiveItem", false);
+                //set trang thai hiện tại là đứng yên
+                currentState = PlayerState.idle;
+                //Xóa hình ảnh item
+                receiveItemSprite.sprite = null;
+                //Xóa item ra khỏi túi nhân vật
+                playerInventory.currentItem = null;
+            }
+        }
     }
 
     //Hàm xử lý animation và chuyển động    
