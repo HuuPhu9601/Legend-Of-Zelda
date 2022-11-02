@@ -2,7 +2,7 @@
 
 public class Log : Enemy
 {
-    private Rigidbody2D myRigidbody;
+    protected Rigidbody2D myRigidbody;
     //Vij trí của mục tiêu cần log đuổi theo
     public Transform target;
     //Bán kính đuổi theo của log
@@ -13,7 +13,7 @@ public class Log : Enemy
     public Transform homePosition;
 
     //Khai báo animator
-    private Animator anim;
+    protected Animator anim;
     void Start()
     {
         //Khai báo animator
@@ -24,6 +24,7 @@ public class Log : Enemy
         myRigidbody = GetComponent<Rigidbody2D>();
         //khởi tạo vị trí target chính là vị trí nhân vật bằng cách tìm nhân vật theo tag (dùng hàm  GameObject.FindWithTag)
         target = GameObject.FindWithTag("Player").transform;
+        anim.SetBool("wakeUp", true);
     }
 
     void FixedUpdate()
@@ -32,7 +33,7 @@ public class Log : Enemy
     }
 
     //hàm kiểm tra khoảng cách
-    private void CheckDistance()
+    protected virtual void CheckDistance()
     {
         //Kiểm tra khoảng cách của log và nhân vật player sử dụng hàm Vector3.Distance()
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
@@ -54,14 +55,14 @@ public class Log : Enemy
         else if(Vector3.Distance(target.position, transform.position) > chaseRadius) anim.SetBool("wakeUp", false);
     }
 
-    private void SetAnimFloat(Vector2 setVector)
+    protected void SetAnimFloat(Vector2 setVector)
     {
         anim.SetFloat("moveX", setVector.x);
         anim.SetFloat("moveY", setVector.y);
     }
 
     //Hàm xử lý thay đổi anim của log
-    private void ChangeAnim(Vector2 direction)
+    protected void ChangeAnim(Vector2 direction)
     {
         //Kiểm tra xem log di chuyển trái phải hay lên xuống
         //Vì có cả giá trị âm nên ta phải dùng trị tuyệt đối để so sánh sang trái phải hay lên xuống
@@ -93,7 +94,7 @@ public class Log : Enemy
         }
     }
 
-    private void ChangeState(EnemyState newState)
+    protected void ChangeState(EnemyState newState)
     {
         if (currentState != newState) currentState = newState;
     }

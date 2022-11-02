@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 7443885574508474067}
   - component: {fileID: 7443885574508474060}
   - component: {fileID: 7443885574508474063}
-  - component: {fileID: 7443885574508474062}
   - component: {fileID: 7443885574508474057}
   - component: {fileID: 7443885574508474056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: log
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -77,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 214218879
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1643269244, guid: 38fd1cde89d87794aad083ead7e84821, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -157,28 +156,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7443885574508474062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7443885574508474064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b4c714e83be9b41b59c143d2737c6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  maxHealth: {fileID: 11400000, guid: c14684e5c8487e3409dfa2f8f2484689, type: 2}
-  health: 2
-  enemyName: Larry the log
-  baseAttack: 1
-  moveSpeed: 1.5
-  target: {fileID: 0}
-  chaseRadius: 4
-  attackRadius: 1
-  homePosition: {fileID: 0}
 --- !u!61 &7443885574508474057
 BoxCollider2D:
   m_ObjectHideFlags: 0
