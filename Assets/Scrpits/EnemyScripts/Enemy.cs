@@ -20,7 +20,8 @@ public class Enemy : MonoBehaviour
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
-
+    //Khai báo đối tượng chứa hiệu ứng chết
+    public GameObject deathEffect;
     private void Awake()
     {
         health = maxHealth.initialValue;
@@ -33,7 +34,20 @@ public class Enemy : MonoBehaviour
         //Nếu đã hết máu thì enemy không hoạt động nữa
         if (health <= 0)
         {
+            DeathEffect();  
             this.gameObject.SetActive(false);
+        }
+    }
+
+    private void DeathEffect()
+    {
+        //kiem tra doi tuong khong null
+        if (deathEffect != null)
+        {
+            //tao ra doi tuong moi
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            //xao doi tuong sau 1s
+            Destroy(effect, 1f);    
         }
     }
 
