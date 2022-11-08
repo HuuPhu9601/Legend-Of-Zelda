@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerState
 {
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         //Gán vị trí bắt đầu
         transform.position = startingPosition.runtimeValue;
         //Kiểm tra nếu  vào trong nhà thì nhân vật sẽ quay đầu vào bên trong
-        if (transform.position.x == 0.5 && transform.position.y == -4)
+        if (string.Compare(SceneManager.GetActiveScene().name, "SampleScene", true) != 0)
         {
             animator.SetFloat("moveX", 0);
             animator.SetFloat("moveY", 1);
