@@ -72,8 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c310213574daa8a4ea10fb295db5e59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: HouseInterior
-  playerPosition: {x: 0.5, y: -4}
+  sceneToLoad: Dungeon
+  playerPosition: {x: 12, y: -8.5}
   playerStorage: {fileID: 11400000, guid: 9b0cd3eb2ab6d3c44a7567dcc0bdd246, type: 2}
   fadeInpanel: {fileID: 1786683770377365993, guid: fa816bcd41f5459489d922ef3b32eb2c, type: 3}
   fadeOutpanel: {fileID: 7471421786260564267, guid: ff81978c8c0c6c8408fc8887e1f95750, type: 3}
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1230305072, guid: db5b9864f0673f34fb52282cddfb2405, type: 3}
+  m_Sprite: {fileID: -453572518, guid: db5b9864f0673f34fb52282cddfb2405, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

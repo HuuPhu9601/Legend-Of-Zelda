@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scrpits\EnemyScripts\Log.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\Inventory.cs" />
+    <Compile Include="Assets\Scrpits\Objects\Powerup.cs" />
     <Compile Include="Assets\Scrpits\Objects\Door.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\Item.cs" />
     <Compile Include="Assets\Scrpits\Objects\TreasureChest.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Scrpits\Game Stuff\CameraMovement.cs" />
     <Compile Include="Assets\Scrpits\Objects\SceneTransition.cs" />
     <Compile Include="Assets\Scrpits\SignalListener.cs" />
+    <Compile Include="Assets\Scrpits\Objects\Heart.cs" />
     <Compile Include="Assets\Scrpits\Player Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scrpits\Player Scripts\ContextClue.cs" />
     <Compile Include="Assets\Scrpits\Objects\Pot.cs" />
@@ -78,6 +80,8 @@
     <Compile Include="Assets\Scrpits\EnemyScripts\Enemy.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\VectorValue.cs" />
     <Compile Include="Assets\Scrpits\Objects\RoomMove.cs" />
+    <Compile Include="Assets\Scrpits\Objects\Coin.cs" />
+    <Compile Include="Assets\Scrpits\Game Stuff\CoinTextManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -5,9 +5,15 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Inventory : ScriptableObject
 {
+    //Truyền vào đối tượng muốn đựng
     public Item currentItem;
+    //Truyền vào danh sách các item muốn đựng trong túi
     public List<Item> items = new List<Item>();
+    //Số chìa khóa mà túi có
     public int numberOfKey;
+
+    //Số tiền mà nhân vật có
+    public int coins;   
 
     //Hàm thêm item vào danh sách
     public void AddItem(Item itemToAdd)

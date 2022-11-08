@@ -219,5 +219,5 @@ MonoBehaviour:
   deathEffect: {fileID: 628729743033587913, guid: 8ace18bb5df54da4486f179b260ade9c, type: 3}
   target: {fileID: 799873343837425086, guid: 44dc739afcb263643b36e8e135723e55, type: 3}
   chaseRadius: 4
-  attackRadius: 0.5
+  attackRadius: 1.2
   homePosition: {fileID: 0}

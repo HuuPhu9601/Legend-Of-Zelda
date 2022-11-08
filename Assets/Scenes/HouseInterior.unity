@@ -5227,6 +5227,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3991043687420452517, guid: 6646d1b4f9b0e874690deb40cda2ec95, type: 3}
+      propertyPath: sceneToLoad
+      value: SampleScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991043687420452517, guid: 6646d1b4f9b0e874690deb40cda2ec95, type: 3}
+      propertyPath: playerPosition.x
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991043687420452517, guid: 6646d1b4f9b0e874690deb40cda2ec95, type: 3}
+      propertyPath: playerPosition.y
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 7270295185087296004, guid: 6646d1b4f9b0e874690deb40cda2ec95, type: 3}
       propertyPath: m_Name
       value: Scene Transition
