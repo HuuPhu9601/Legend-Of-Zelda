@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -9,11 +10,15 @@ public class CameraMovement : MonoBehaviour
     //Tạo ra điểm min của camera
     public Vector2 minPosition;
 
+    public Animator anim;
+
     private void Start()
     {
         //gán vị trí cam bằng vị trí nhân vật
         //Tạo vector mới để cam trỏ thằng trục z của chính nó, nếu k sẽ k nhìn thấy gì kể cả bản đồ
         transform.position = new Vector3(target.position.x,target.position.y,transform.position.z);
+
+        anim = GetComponent<Animator>();
     }
 
     private void LateUpdate()
@@ -31,5 +36,21 @@ public class CameraMovement : MonoBehaviour
             //param: 1. Vị trí hiện tại - 2. Vị trí muốn di chuyển đến - 3. làm mịn giữa 1 và 2
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
         }
+    }
+
+    //hàm xử lý bật anim
+    public void BeginKick()
+    {
+        anim.SetBool("kick_active", true);
+        StartCoroutine(KickCo());
+    }
+
+    public IEnumerator KickCo()
+    {
+        //Trả về null để cho nó đợi một khung hình
+        yield return null;
+        //Rồi mới tắt anim đi
+        anim.SetBool("kick_active", false);
+
     }
 }

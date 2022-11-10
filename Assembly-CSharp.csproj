@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scrpits\EnemyScripts\Log.cs" />
+    <Compile Include="Assets\Scrpits\Game Stuff\CoinTextManager.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\Inventory.cs" />
     <Compile Include="Assets\Scrpits\Objects\Powerup.cs" />
     <Compile Include="Assets\Scrpits\Objects\Door.cs" />
@@ -79,9 +80,8 @@
     <Compile Include="Assets\Scrpits\Player Scripts\HeartManager.cs" />
     <Compile Include="Assets\Scrpits\EnemyScripts\Enemy.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\VectorValue.cs" />
-    <Compile Include="Assets\Scrpits\Objects\RoomMove.cs" />
     <Compile Include="Assets\Scrpits\Objects\Coin.cs" />
-    <Compile Include="Assets\Scrpits\Game Stuff\CoinTextManager.cs" />
+    <Compile Include="Assets\Scrpits\Objects\RoomMove.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

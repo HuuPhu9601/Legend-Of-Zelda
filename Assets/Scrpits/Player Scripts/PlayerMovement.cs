@@ -39,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
     //Khai báo một bộ render hình ảnh
     public SpriteRenderer receiveItemSprite;
 
+    //Truyền vào tín hiệu thông báo player nhận sát thương
+    public HealthSignal playerHit;
+
     void Start()
     {
         //gán currentstate bằng walk
@@ -184,6 +187,8 @@ public class PlayerMovement : MonoBehaviour
     //Thêm hàm để xử lý enemy tác động nên player
     private IEnumerator KnockCo(float knockTime)
     {
+        //Truyền tín hiệu khi người chơi nhận sát thương
+        playerHit.Raise();
         if (myRigidbody != null)
         {
             yield return new WaitForSeconds(knockTime);
