@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    [Header("Position Variables")]
     public Transform target;
     public float smoothing;
     //Tạo ra điểm max của camera
@@ -10,10 +11,19 @@ public class CameraMovement : MonoBehaviour
     //Tạo ra điểm min của camera
     public Vector2 minPosition;
 
+    [Header("Animator")]
     public Animator anim;
+
+    //Truyền vào giá trị cam reset lại giới hạn cam
+    [Header("Position Reset")]
+    public VectorValue camMin;
+    public VectorValue camMax;
 
     private void Start()
     {
+        maxPosition = camMax.runtimeValue;
+        minPosition = camMin.runtimeValue;
+
         //gán vị trí cam bằng vị trí nhân vật
         //Tạo vector mới để cam trỏ thằng trục z của chính nó, nếu k sẽ k nhìn thấy gì kể cả bản đồ
         transform.position = new Vector3(target.position.x,target.position.y,transform.position.z);

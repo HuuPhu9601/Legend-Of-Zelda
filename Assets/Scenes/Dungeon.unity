@@ -12199,8 +12199,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3991043687420452517, guid: 6646d1b4f9b0e874690deb40cda2ec95, type: 3}
+      propertyPath: cameraMax
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ab6cdc0d5931754493f10eb419b604a, type: 2}
+    - target: {fileID: 3991043687420452517, guid: 6646d1b4f9b0e874690deb40cda2ec95, type: 3}
+      propertyPath: cameraMin
+      value: 
+      objectReference: {fileID: 11400000, guid: c116ee1852367754c9c15fdaea03f397, type: 2}
+    - target: {fileID: 3991043687420452517, guid: 6646d1b4f9b0e874690deb40cda2ec95, type: 3}
       propertyPath: sceneToLoad
       value: SampleScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991043687420452517, guid: 6646d1b4f9b0e874690deb40cda2ec95, type: 3}
+      propertyPath: cameraNewMax.x
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991043687420452517, guid: 6646d1b4f9b0e874690deb40cda2ec95, type: 3}
+      propertyPath: cameraNewMax.y
+      value: -31
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991043687420452517, guid: 6646d1b4f9b0e874690deb40cda2ec95, type: 3}
+      propertyPath: cameraNewMin.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991043687420452517, guid: 6646d1b4f9b0e874690deb40cda2ec95, type: 3}
+      propertyPath: cameraNewMin.y
+      value: -44
       objectReference: {fileID: 0}
     - target: {fileID: 3991043687420452517, guid: 6646d1b4f9b0e874690deb40cda2ec95, type: 3}
       propertyPath: playerPosition.x
@@ -20925,6 +20949,9 @@ MonoBehaviour:
   smoothing: 0.2
   maxPosition: {x: 13.27, y: -1.04}
   minPosition: {x: 11.72, y: -5.98}
+  anim: {fileID: 0}
+  camMin: {fileID: 11400000, guid: 39dd48686b5194840895fdb53700f97e, type: 2}
+  camMax: {fileID: 11400000, guid: a3fd722d780d0624e9aeacce220cebca, type: 2}
 --- !u!4 &2091992096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5757934429256206609, guid: 6bbbacb7a3bc05b48962a4844cd2d29b, type: 3}

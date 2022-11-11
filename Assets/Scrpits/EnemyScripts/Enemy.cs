@@ -13,15 +13,22 @@ public enum EnemyState
 public class Enemy : MonoBehaviour
 {
     //Khai báo enum
+    [Header("State Machine")]
     public EnemyState currentState;
+
+    [Header("Enemy Stats")]
     //Khai báo một ScriptableObject là sức khỏe lớn nhất
     public FloatValue maxHealth;
     public float health;
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
+
+    [Header("Death Effects")]
     //Khai báo đối tượng chứa hiệu ứng chết
     public GameObject deathEffect;
+
+    private float deathEffectDelay = 1f;
     private void Awake()
     {
         health = maxHealth.initialValue;
@@ -47,7 +54,7 @@ public class Enemy : MonoBehaviour
             //tao ra doi tuong moi
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             //xao doi tuong sau 1s
-            Destroy(effect, 1f);    
+            Destroy(effect, deathEffectDelay);    
         }
     }
 

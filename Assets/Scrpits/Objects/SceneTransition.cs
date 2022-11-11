@@ -5,12 +5,21 @@ using UnityEngine.SceneManagement;
 public class SceneTransition : MonoBehaviour
 {
     //tên sceen cần mở
+    [Header("New scene variables")]
     public string sceneToLoad;
     //Ví trí nhân vật xuất hiện ở scene load
     public Vector2 playerPosition;
     //Lưu vị trí cấu hình của nhân vật
     public VectorValue playerStorage;
+    //truyền vào vị trí min max mới của cam khi chuyển cảnh khi bị quá giới hạn của cam
+    public Vector2 cameraNewMax;
+    public Vector2 cameraNewMin;
 
+    public VectorValue cameraMin;
+    public VectorValue cameraMax;
+
+
+    [Header("transition Variables")]
     public GameObject fadeInpanel;
     public GameObject fadeOutpanel;
     public float fadeWait;
@@ -48,6 +57,7 @@ public class SceneTransition : MonoBehaviour
             Instantiate(fadeOutpanel, Vector3.zero, Quaternion.identity);
         }
         yield return new WaitForSeconds(fadeWait);
+        ResetCameraBounds();
 
         //Load scene đồng bộ
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
@@ -55,5 +65,12 @@ public class SceneTransition : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    //Reset lại giới hạn mới cho cam
+    public void ResetCameraBounds()
+    {
+        cameraMax.runtimeValue = cameraNewMax;
+        cameraMin.runtimeValue = cameraNewMin;
     }
 }
