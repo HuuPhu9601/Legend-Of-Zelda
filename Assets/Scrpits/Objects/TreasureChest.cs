@@ -6,19 +6,32 @@ using UnityEngine.UI;
 
 public class TreasureChest : Interactable
 {
+    [Header("Contains")]
     public Item contents;//Truyền vào một item
     public Inventory playerInventory;//Truyền vào túi đựng item của nhân vật
     public bool isOpen;//Điều khiển có mở rương hay không
+    public BoolValue storedOpen;//Truyền vào giá trị bool để biết xem rương đã đc mở hay chưa??
+
+    [Header("Signals And Dialogs")]
     public HealthSignal raiseItem;//Truyền vào 1 tín hiệu item
     public GameObject dialogBox;//truyền vào một dialog thông baos mô tả vật phẩm nhặt đc
     //Tạo text
     public TextMeshProUGUI dialogText;//Truyền vào UI text để hiển thị mô tả vật phẩm
+
+    [Header("Animator")]
     private Animator anim;//Khai báo animator của rương báu
 
     private void Start()
     {
         //Khởi tạo animator
         anim = GetComponent<Animator>();
+        //Gán cờ mở bằng cờ đã mở để xem rương đã mở chưa
+        isOpen = storedOpen.runtimeValue;
+        if (isOpen)
+        {
+            //Thực hiện anim mở rương
+            anim.SetBool("opened", true);
+        }
     }
 
     private void Update()
@@ -60,6 +73,8 @@ public class TreasureChest : Interactable
         isOpen = true;
         //Thực hiện anim mở rương
         anim.SetBool("opened", true);
+        //Gán thành đã mở rương
+        storedOpen.runtimeValue = isOpen;
     }
 
     //Hàm xử lý chuẩn bị mở rương

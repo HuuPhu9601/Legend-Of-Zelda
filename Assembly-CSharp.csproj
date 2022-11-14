@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scrpits\ScriptableObjects\VectorValue.cs" />
     <Compile Include="Assets\Scrpits\Objects\Coin.cs" />
     <Compile Include="Assets\Scrpits\Objects\RoomMove.cs" />
+    <Compile Include="Assets\Scrpits\ScriptableObjects\BoolValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
