@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     public int baseAttack;
     public float moveSpeed;
 
-    [Header("Death Effects")]
+    [Header("Hiệu ứng hạ gục")]
     //Khai báo đối tượng chứa hiệu ứng chết
     public GameObject deathEffect;
 

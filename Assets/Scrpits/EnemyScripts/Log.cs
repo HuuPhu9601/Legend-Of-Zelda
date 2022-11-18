@@ -4,12 +4,16 @@ public class Log : Enemy
 {
     protected Rigidbody2D myRigidbody;
     //Vij trí của mục tiêu cần log đuổi theo
+    [Header("Vị trí Log tập trung vào")]
     public Transform target;
     //Bán kính đuổi theo của log
+    [Header("Bán kính đuổi theo")]
     public float chaseRadius;
     //Bán kính trấn công của log
+    [Header("Bán kính tấn công")]
     public float attackRadius;
     //Vị trí nhà mà log sẽ quay lại
+    [Header("Vị trí Log quay lại")]
     public Transform homePosition;
 
     //Khai báo animator

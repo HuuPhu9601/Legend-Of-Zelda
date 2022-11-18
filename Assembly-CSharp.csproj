@@ -66,10 +66,12 @@
     <Compile Include="Assets\Scrpits\EnemyScripts\PatrolLog.cs" />
     <Compile Include="Assets\Scrpits\Interactable.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\HealthSignal.cs" />
+    <Compile Include="Assets\Scrpits\EnemyScripts\AreaEnemy.cs" />
     <Compile Include="Assets\Scrpits\Player Scripts\PlayerHit.cs" />
     <Compile Include="Assets\Scrpits\Objects\Sign.cs" />
     <Compile Include="Assets\Scrpits\Game Stuff\Knockback.cs" />
     <Compile Include="Assets\Scrpits\Game Stuff\CameraMovement.cs" />
+    <Compile Include="Assets\Scrpits\Objects\Switch.cs" />
     <Compile Include="Assets\Scrpits\Objects\SceneTransition.cs" />
     <Compile Include="Assets\Scrpits\SignalListener.cs" />
     <Compile Include="Assets\Scrpits\Objects\Heart.cs" />
@@ -83,7 +85,9 @@
     <Compile Include="Assets\Scrpits\Objects\Coin.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\BoolValue.cs" />
     <Compile Include="Assets\Scrpits\Objects\RoomMove.cs" />
-    <Compile Include="Assets\Scrpits\EnemyScripts\AreaEnemy.cs" />
+    <Compile Include="Assets\Scrpits\EnemyScripts\RockProjectile.cs" />
+    <Compile Include="Assets\Scrpits\Objects\Projectile.cs" />
+    <Compile Include="Assets\Scrpits\EnemyScripts\TurretEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
