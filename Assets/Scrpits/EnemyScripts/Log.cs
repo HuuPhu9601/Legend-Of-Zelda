@@ -13,8 +13,6 @@ public class Log : Enemy
     [Header("Bán kính tấn công")]
     public float attackRadius;
     //Vị trí nhà mà log sẽ quay lại
-    [Header("Vị trí Log quay lại")]
-    public Transform homePosition;
 
     //Khai báo animator
     protected Animator anim;

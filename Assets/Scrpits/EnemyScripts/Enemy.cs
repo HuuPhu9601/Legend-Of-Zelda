@@ -24,6 +24,9 @@ public class Enemy : MonoBehaviour
     public int baseAttack;
     public float moveSpeed;
 
+    [Header("Vị trí ban đầu")]
+    public Vector2 homePosition;//truyền vào vị trí ban đầu của enemy
+
     [Header("Hiệu ứng hạ gục")]
     //Khai báo đối tượng chứa hiệu ứng chết
     public GameObject deathEffect;
@@ -32,6 +35,11 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         health = maxHealth.initialValue;
+    }
+
+    private void OnEnable()
+    {
+        transform.position = homePosition;
     }
 
     //Hàm xử lý gây damage
