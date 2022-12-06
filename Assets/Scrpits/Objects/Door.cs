@@ -54,7 +54,12 @@ public class Door : Interactable
 
     public void Close()
     {
-
+        //Turn off the door's sprite renderer tắt hình ảnh cánh cửa
+        doorSprite.enabled = true;
+        //set isOpen is true
+        open = false;
+        //turn off the door's box collider tắt box collider của cánh cửa
+        physicsCollider.enabled = true;
     }
 }
 

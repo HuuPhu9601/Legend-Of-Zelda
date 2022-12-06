@@ -2,15 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Room : MonoBehaviour
+public class DungeonEnemyRoom : DungeonRoom
 {
-    [Header("Danh sách enemy")]
-    public Enemy[] enemies;//truyền vaod ds enemy
+    [Header("Danh sách cánh cửa")]
+    public Door[] doors;//truyền vào ds cách cửa
 
-    [Header("Danh sach chậu")]
-    public Pot[] pots;//truyền vaò ds chậu
 
-    public virtual void OnTriggerEnter2D(Collider2D other)
+    //Hàm kiểm tra enemy tồn tại trong phòng
+    public void CheckEnemies()
+    {
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            if (enemies[i].gameObject.activeInHierarchy && i < enemies.Length - 1)//Kiểm tra enemy đang hoạt đông hay không?
+            {
+                return;
+            }
+        }
+        //Nếu không còn enemy nào hđ thì sẽ mở cửa
+        OpenDoor();
+    }
+
+    public override void OnTriggerEnter2D(Collider2D other)
     {
         //kiểm tra other(thứ chạm vào collider) là player và đối tượng istrigger = false
         if (other.CompareTag("Player") && !other.isTrigger)
@@ -24,10 +36,13 @@ public class Room : MonoBehaviour
             {
                 ChangeActivation(pots[i], true);
             }
+            //Đong cửa
+            CloseDoor();
         }
+        
     }
 
-    public virtual void OnTriggerExit2D(Collider2D other)
+    public override void OnTriggerExit2D(Collider2D other)
     {
         //kiểm tra other(thứ chạm vào collider) là player và đối tượng istrigger = false
         if (other.CompareTag("Player") && !other.isTrigger)
@@ -44,9 +59,21 @@ public class Room : MonoBehaviour
         }
     }
 
-    //Hàm dùng để điều kiển hoạt động của component truyền vào
-    public void ChangeActivation(Component component, bool activation)
+    //Hàm thực hiện đóng cửa
+    public void CloseDoor()
     {
-        component.gameObject.SetActive(activation);//Set hoạt động cho component truyền vào
+        for (int i = 0; i < doors.Length; i++)
+        {
+            doors[i].Close();
+        }
+    }
+
+    //Hàm thực hiện mở cửa  
+    public void OpenDoor()
+    {
+        for (int i = 0; i < doors.Length; i++)
+        {
+            doors[i].Open();
+        }
     }
 }

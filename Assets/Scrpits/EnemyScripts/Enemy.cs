@@ -31,6 +31,12 @@ public class Enemy : MonoBehaviour
     //Khai báo đối tượng chứa hiệu ứng chết
     public GameObject deathEffect;
 
+    [Header("Tín hiệu bị hạ gục")]
+    public HealthSignal roomSignal;
+
+    [Header("Danh sách vp sẽ rơi")]
+    public LootTable thisLoot;//Truyền vào  ds vp sẽ roi ra khi enemy chết
+
     private float deathEffectDelay = 1f;
     private void Awake()
     {
@@ -49,11 +55,28 @@ public class Enemy : MonoBehaviour
         //Nếu đã hết máu thì enemy không hoạt động nữa
         if (health <= 0)
         {
-            DeathEffect();  
+            DeathEffect();//hiẹu ứng chết
+            MakeLoot();//rơi đôf
+            if (roomSignal != null) roomSignal.Raise();
             this.gameObject.SetActive(false);
         }
     }
 
+    //Hàm xử lý rơi ra chiến lợi phẩm khi enemy chết
+    private void MakeLoot()
+    {
+        if (thisLoot != null)
+        {
+            Powerup current = thisLoot.LootPowerup();
+            if (current != null)
+            {
+                //Khởi tạo vật phẩm ngay tại vị trí eneemy
+                Instantiate(current.gameObject, transform.position, Quaternion.identity);
+            }
+        }
+    }
+
+    //Hàm xử lý khi enemy chết sẽ tạo hiệu ứng lửa
     private void DeathEffect()
     {
         //kiem tra doi tuong khong null
@@ -62,7 +85,7 @@ public class Enemy : MonoBehaviour
             //tao ra doi tuong moi
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             //xao doi tuong sau 1s
-            Destroy(effect, deathEffectDelay);    
+            Destroy(effect, deathEffectDelay);
         }
     }
 
