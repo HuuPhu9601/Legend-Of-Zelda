@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scrpits\Game Stuff\OverWorldRoom.cs" />
     <Compile Include="Assets\Scrpits\Game Stuff\CameraMovement.cs" />
     <Compile Include="Assets\Scrpits\EnemyScripts\RockProjectile.cs" />
+    <Compile Include="Assets\Scrpits\ScriptableObjects\LootTable.cs" />
     <Compile Include="Assets\Scrpits\Objects\Switch.cs" />
     <Compile Include="Assets\Scrpits\Objects\SceneTransition.cs" />
     <Compile Include="Assets\Scrpits\SignalListener.cs" />
@@ -92,7 +93,6 @@
     <Compile Include="Assets\Scrpits\Game Stuff\DungeonEnemyRoom.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\BoolValue.cs" />
     <Compile Include="Assets\Scrpits\Objects\RoomMove.cs" />
-    <Compile Include="Assets\Scrpits\ScriptableObjects\LootTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

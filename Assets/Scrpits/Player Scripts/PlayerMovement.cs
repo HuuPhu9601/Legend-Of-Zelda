@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
         //Kiểm tra điều khiển đầu vào có phải attack bằng hàm buttondown - - truyền vào tên phím
-        if (Input.GetButtonDown("Attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
+        if (Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
         {
             //Gọi hàm thực hiện tấn công
             StartCoroutine(AttackCo());

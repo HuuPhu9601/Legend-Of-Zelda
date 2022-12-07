@@ -46,6 +46,8 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         transform.position = homePosition;
+        health = maxHealth.initialValue;
+        currentState = EnemyState.idle;
     }
 
     //Hàm xử lý gây damage

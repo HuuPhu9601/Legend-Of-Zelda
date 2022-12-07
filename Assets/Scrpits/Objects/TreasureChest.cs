@@ -38,7 +38,7 @@ public class TreasureChest : Interactable
     {
         //Nhận điều khiển từ phím space truyền vào và nhân vật trong vùng va chạm
         //Input.GetKeyDown(KeyCode.Space)
-        if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
+        if (Input.GetButtonDown("attack") && playerInRange)
         {
             if (!isOpen)//Khi rương đóng sẽ mở rương
             {

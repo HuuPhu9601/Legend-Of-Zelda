@@ -25,7 +25,7 @@ public class Door : Interactable
     private void Update()
     {
         //Nếu nhấn phím cách
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("attack"))
         {
             //Nếu player trong vùng và trạng thái của cửa là khóa
             if (playerInRange && thisDoorType == DoorType.key)
