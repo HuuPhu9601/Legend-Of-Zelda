@@ -50,6 +50,22 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 1978202546, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: -2073952591, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: 1089739116, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: 1920418970, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: 1677104485, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: 1132903821, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: -1610569558, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: 898065719, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: -1715652782, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: 914550174, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: -648145695, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: 1773432851, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: 1638183024, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: 842647421, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: 1497310226, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
+  - {fileID: 1615163455, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
   - {fileID: 21300000, guid: 79f2add3d164302448e61538c56f3139, type: 3}
   - {fileID: 469347479, guid: ab4e9fd3db5021e488b4192f3082d0d5, type: 3}
   - {fileID: 85132126, guid: ab4e9fd3db5021e488b4192f3082d0d5, type: 3}
@@ -1724,6 +1740,22 @@ SpriteAtlas:
   - {fileID: -1958617856, guid: 917dc3bd5e09bf84caf0b12080a7cec5, type: 3}
   - {fileID: -336075239, guid: 917dc3bd5e09bf84caf0b12080a7cec5, type: 3}
   - {fileID: -1843790335, guid: 917dc3bd5e09bf84caf0b12080a7cec5, type: 3}
+  - {fileID: -1291640801, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: -1507439161, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: 990128786, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: -1020961829, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: -951996557, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: -1875679263, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: 676495073, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: 804139370, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: -2063613304, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: -1054825093, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: 590518869, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: 1980602109, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: -1990853387, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: -621227802, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: 332647048, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
+  - {fileID: -1748244482, guid: ed9e48dd35c1ec8499b60e95057655d0, type: 3}
   - {fileID: -1811021646, guid: 38fd1cde89d87794aad083ead7e84821, type: 3}
   - {fileID: -1837075626, guid: 38fd1cde89d87794aad083ead7e84821, type: 3}
   - {fileID: 852985637, guid: 38fd1cde89d87794aad083ead7e84821, type: 3}
@@ -1748,6 +1780,22 @@ SpriteAtlas:
   - {fileID: -1498336466, guid: 38fd1cde89d87794aad083ead7e84821, type: 3}
   - {fileID: -860119725, guid: 38fd1cde89d87794aad083ead7e84821, type: 3}
   m_PackedSpriteNamesToIndex:
+  - orge attack sprites_9
+  - orge attack sprites_8
+  - orge attack sprites_3
+  - orge attack sprites_2
+  - orge attack sprites_1
+  - orge attack sprites_0
+  - orge attack sprites_7
+  - orge attack sprites_6
+  - orge attack sprites_5
+  - orge attack sprites_4
+  - orge attack sprites_14
+  - orge attack sprites_15
+  - orge attack sprites_12
+  - orge attack sprites_13
+  - orge attack sprites_10
+  - orge attack sprites_11
   - door 2
   - cave_50
   - cave_51
@@ -3422,6 +3470,22 @@ SpriteAtlas:
   - objects_108
   - switch down
   - switch up
+  - orge_10
+  - orge_11
+  - orge_12
+  - orge_13
+  - orge_14
+  - orge_15
+  - orge_1
+  - orge_0
+  - orge_3
+  - orge_2
+  - orge_5
+  - orge_4
+  - orge_7
+  - orge_6
+  - orge_9
+  - orge_8
   - log_8
   - log_9
   - log_2

@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scrpits\Objects\Projectile.cs" />
     <Compile Include="Assets\Scrpits\Objects\Pot.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\FloatValue.cs" />
+    <Compile Include="Assets\Scrpits\EnemyScripts\MelleEnemy.cs" />
     <Compile Include="Assets\Scrpits\Player Scripts\HeartManager.cs" />
     <Compile Include="Assets\Scrpits\EnemyScripts\Enemy.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\VectorValue.cs" />
