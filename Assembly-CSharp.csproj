@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scrpits\EnemyScripts\AreaEnemy.cs" />
     <Compile Include="Assets\Scrpits\Player Scripts\PlayerHit.cs" />
     <Compile Include="Assets\Scrpits\Objects\Sign.cs" />
+    <Compile Include="Assets\Scrpits\Objects\MagicPowerup.cs" />
     <Compile Include="Assets\Scrpits\Game Stuff\Knockback.cs" />
     <Compile Include="Assets\Scrpits\Game Stuff\OverWorldRoom.cs" />
     <Compile Include="Assets\Scrpits\Game Stuff\CameraMovement.cs" />
@@ -87,8 +88,10 @@
     <Compile Include="Assets\Scrpits\EnemyScripts\MelleEnemy.cs" />
     <Compile Include="Assets\Scrpits\Player Scripts\HeartManager.cs" />
     <Compile Include="Assets\Scrpits\EnemyScripts\Enemy.cs" />
+    <Compile Include="Assets\Scrpits\Objects\Arrow.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\VectorValue.cs" />
     <Compile Include="Assets\Scrpits\Game Stuff\Room.cs" />
+    <Compile Include="Assets\Scrpits\Game Stuff\MagicManager.cs" />
     <Compile Include="Assets\Scrpits\EnemyScripts\TurretEnemy.cs" />
     <Compile Include="Assets\Scrpits\Objects\Coin.cs" />
     <Compile Include="Assets\Scrpits\Game Stuff\DungeonEnemyRoom.cs" />

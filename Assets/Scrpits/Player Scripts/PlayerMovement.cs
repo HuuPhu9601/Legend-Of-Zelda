@@ -40,8 +40,14 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer receiveItemSprite;
 
     //Truyền vào tín hiệu thông báo player nhận sát thương
+    [Header("Tín hiệu nhận damage")]
     public HealthSignal playerHit;
 
+    [Header("TTín hiệu magic")]
+    public HealthSignal reduceMagic;
+
+    [Header("Đạn")]
+    public GameObject projectile;
     void Start()
     {
         //gán currentstate bằng walk
@@ -85,7 +91,11 @@ public class PlayerMovement : MonoBehaviour
             //Gọi hàm thực hiện tấn công
             StartCoroutine(AttackCo());
         }
-
+        //kiểm tra nếu nhấn nút "M (Second Weapon) đã cài đătj trong input manager" thì thực hiện bắn tên
+        else if (Input.GetButtonDown("Second Weapon") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
+        {
+            StartCoroutine(SecondAttackCo());//Gọi hàm tấn công mũi tên
+        }
         //Kiểm tra currentstate bằng walk thì mới cho di chuyển và anim
         else if (currentState == PlayerState.walk || currentState == PlayerState.idle)
         {
@@ -110,6 +120,51 @@ public class PlayerMovement : MonoBehaviour
         {
             currentState = PlayerState.walk;
         }
+    }
+
+    //Hàm thực hiện bắn mũi tên và anim
+    private IEnumerator SecondAttackCo()
+    {
+        //Thực hiển chuyển động tấn công bằng cách bật param attack
+        //animator.SetBool("attacking", true);
+        //Set trangk thái hiện tại là tấn công
+        currentState = PlayerState.attack;
+        MakeArrow();//Gọi hàm 
+        yield return null;
+        //Sau khi thực hiện tấn công và qua return trả về sẽ tắt anim tấn công
+        //animator.SetBool("attacking", false);
+        //Sau đó lại đợi và giây
+        yield return new WaitForSeconds(0.3f);
+        //Sau khi đợi 0.33s thì sẽ sét trạng thái hiện tại về đi bộ
+        if (currentState != PlayerState.interact)
+        {
+            currentState = PlayerState.walk;
+        }
+    }
+
+    //Hàm xử lý tạo mũi tên
+    private void MakeArrow()
+    {
+        //Nếu magic hiện tại lớn hơn 0 thì tạo mũi tên
+        if (playerInventory.currentMagic > 0)
+        {
+            //Khai báo vector2 chứa g/trị moveX và moveY của nhân vật để điều khiển hươngs mũi tên
+            Vector2 temp = new Vector2(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
+
+            //Khởi tạo và ép kiểu đối tượng mũi tên
+            Arrow arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>();
+            arrow.Setup(temp, ChooseArrowDirection());
+
+            reduceMagic.Raise();//Truyền tins hiệu để giảm magic
+        }
+    }
+
+    //Hàm xử lý điều hướng mũi tên
+    private Vector3 ChooseArrowDirection()
+    {
+        //Hàm trả về góc giữa trục Y/ trục X để lấy ra trục z
+        float temp = Mathf.Atan2(animator.GetFloat("moveY"), animator.GetFloat("moveX")) * Mathf.Rad2Deg;
+        return new Vector3(0, 0, temp);
     }
 
     //Hàm xử lý nhặt item

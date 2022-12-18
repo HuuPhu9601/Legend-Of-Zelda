@@ -2,9 +2,13 @@
 
 public class Knockback : MonoBehaviour
 {
+    [Header("Lực đẩy")]
     public float thrust;
+    
+    [Header("Thời gian cú đánh")]
     public float knockTime;
     //lượng đam
+    [Header("Lượng đam")]
     public float damage;
     private void OnTriggerEnter2D(Collider2D other)
     {

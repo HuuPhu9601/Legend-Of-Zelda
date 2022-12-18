@@ -6,4 +6,6 @@ public class Powerup : MonoBehaviour
 {
     //Tạo ra môt tín hiệu powerup
     public HealthSignal powerupSignal;
+
+
 }

@@ -50,6 +50,7 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: c79a04c01daef9841a9f3a350a75596d, type: 3}
   - {fileID: 1978202546, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
   - {fileID: -2073952591, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
   - {fileID: 1089739116, guid: e63f1b8149f193e41b7b97c32fc8fa2f, type: 3}
@@ -184,6 +185,7 @@ SpriteAtlas:
   - {fileID: -2086315071, guid: ab4e9fd3db5021e488b4192f3082d0d5, type: 3}
   - {fileID: 573004292, guid: ab4e9fd3db5021e488b4192f3082d0d5, type: 3}
   - {fileID: -753871476, guid: ab4e9fd3db5021e488b4192f3082d0d5, type: 3}
+  - {fileID: 21300000, guid: 482c691437053cc47853364eaf99abae, type: 3}
   - {fileID: 21300000, guid: 8ce33544fbed6a14897c6901be50a508, type: 3}
   - {fileID: 21300000, guid: 74ee5f44fa2177e4994aacde696ab76a, type: 3}
   - {fileID: -1798428087, guid: db5b9864f0673f34fb52282cddfb2405, type: 3}
@@ -1592,8 +1594,10 @@ SpriteAtlas:
   - {fileID: -1576480284, guid: 7e152079a94aa2a4e8d2963196c35876, type: 3}
   - {fileID: 13252375, guid: 7e152079a94aa2a4e8d2963196c35876, type: 3}
   - {fileID: -1454745351, guid: 7e152079a94aa2a4e8d2963196c35876, type: 3}
+  - {fileID: 21300000, guid: 07735f6b0bef18d4398104b028d07c03, type: 3}
   - {fileID: 21300000, guid: 371008dbbdb28dd4eb60a14b55076848, type: 3}
   - {fileID: 21300000, guid: d96ddd9c73b373b4bb3006e090daf2de, type: 3}
+  - {fileID: 21300000, guid: ab4aac6dae35b1b4187bac8dba107b4e, type: 3}
   - {fileID: -1761927980, guid: 917dc3bd5e09bf84caf0b12080a7cec5, type: 3}
   - {fileID: -93077201, guid: 917dc3bd5e09bf84caf0b12080a7cec5, type: 3}
   - {fileID: 989525808, guid: 917dc3bd5e09bf84caf0b12080a7cec5, type: 3}
@@ -1780,6 +1784,7 @@ SpriteAtlas:
   - {fileID: -1498336466, guid: 38fd1cde89d87794aad083ead7e84821, type: 3}
   - {fileID: -860119725, guid: 38fd1cde89d87794aad083ead7e84821, type: 3}
   m_PackedSpriteNamesToIndex:
+  - magic bottle
   - orge attack sprites_9
   - orge attack sprites_8
   - orge attack sprites_3
@@ -1914,6 +1919,7 @@ SpriteAtlas:
   - cave_110
   - cave_108
   - cave_109
+  - bow
   - font
   - NPC_test
   - Overworld_827
@@ -3322,8 +3328,10 @@ SpriteAtlas:
   - attack spites_10
   - attack spites_13
   - attack spites_12
+  - arrow
   - door
   - key
+  - magic bar
   - objects_71
   - objects_70
   - objects_73

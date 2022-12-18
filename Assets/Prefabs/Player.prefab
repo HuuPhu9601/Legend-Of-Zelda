@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 975766138}
   - component: {fileID: 975766140}
   - component: {fileID: 975766139}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Received Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1300703261}
   - component: {fileID: 1300703260}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Context Clue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 799873341825410377}
   - component: {fileID: 799873341825410390}
   - component: {fileID: 799873341825410391}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: right hit box
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 799873342828069060}
   - component: {fileID: 799873342828069061}
   - component: {fileID: 799873342828069058}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: left hit box
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 799873342948062646}
   - component: {fileID: 799873342948062647}
   - component: {fileID: 799873342948062644}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: up hit box
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 799873343201362070}
   - component: {fileID: 799873343201362071}
   - component: {fileID: 799873343201362068}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: down hit box
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 799873343837425084}
   - component: {fileID: 1480408127}
   - component: {fileID: 1480408129}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -672,6 +672,8 @@ MonoBehaviour:
   startingPosition: {fileID: 11400000, guid: 9b0cd3eb2ab6d3c44a7567dcc0bdd246, type: 2}
   playerInventory: {fileID: 11400000, guid: 4e5f1612a9f375d40837b0b851f960f4, type: 2}
   receiveItemSprite: {fileID: 975766140}
+  playerHit: {fileID: 11400000, guid: 844ab00cd4c5550499c32edead4f1856, type: 2}
+  projectile: {fileID: 0}
 --- !u!95 &799873343837425087
 Animator:
   serializedVersion: 4

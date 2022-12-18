@@ -13,7 +13,13 @@ public class Inventory : ScriptableObject
     public int numberOfKey;
 
     //Số tiền mà nhân vật có
-    public int coins;   
+    public int coins;
+
+    [Header("Magic lớn nhất")]
+    public float maxMagic = 10;
+
+    [Header("Magic hiện tại")]
+    public float currentMagic;
 
     //Hàm thêm item vào danh sách
     public void AddItem(Item itemToAdd)
