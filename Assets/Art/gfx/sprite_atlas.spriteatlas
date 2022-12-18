@@ -1315,6 +1315,7 @@ SpriteAtlas:
   - {fileID: -1418627784, guid: bfee1175329e70d4cb88fe2b02eba10f, type: 3}
   - {fileID: 1732740051, guid: bfee1175329e70d4cb88fe2b02eba10f, type: 3}
   - {fileID: 1217835445, guid: bfee1175329e70d4cb88fe2b02eba10f, type: 3}
+  - {fileID: -2413806693520163455, guid: b1d9b0a6ec3b257479da69d3c9bfa5c1, type: 3}
   - {fileID: -373164032, guid: b191e027b1fe9b74eb045920368aaf39, type: 3}
   - {fileID: 2089779712, guid: b191e027b1fe9b74eb045920368aaf39, type: 3}
   - {fileID: -719152306, guid: b191e027b1fe9b74eb045920368aaf39, type: 3}
@@ -3049,6 +3050,7 @@ SpriteAtlas:
   - character_46
   - character_45
   - character_44
+  - Circle
   - Inner_48
   - Inner_49
   - Inner_28

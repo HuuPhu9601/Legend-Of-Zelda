@@ -48,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Đạn")]
     public GameObject projectile;
+
+    private Arrow arrow;
     void Start()
     {
         //gán currentstate bằng walk
@@ -95,12 +97,14 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetButtonDown("Second Weapon") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
         {
             StartCoroutine(SecondAttackCo());//Gọi hàm tấn công mũi tên
+
         }
         //Kiểm tra currentstate bằng walk thì mới cho di chuyển và anim
         else if (currentState == PlayerState.walk || currentState == PlayerState.idle)
         {
             UpdateAnimationAndMove();
         }
+        if (arrow != null) arrow.CheckLimit(this.transform);
     }
 
     //Hàm thực hiện tấn công và anim
@@ -129,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
         //animator.SetBool("attacking", true);
         //Set trangk thái hiện tại là tấn công
         currentState = PlayerState.attack;
-        MakeArrow();//Gọi hàm 
+        MakeArrow(out arrow);//Gọi hàm
         yield return null;
         //Sau khi thực hiện tấn công và qua return trả về sẽ tắt anim tấn công
         //animator.SetBool("attacking", false);
@@ -143,8 +147,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //Hàm xử lý tạo mũi tên
-    private void MakeArrow()
+    private void MakeArrow(out Arrow arrow)
     {
+        arrow = null;
         //Nếu magic hiện tại lớn hơn 0 thì tạo mũi tên
         if (playerInventory.currentMagic > 0)
         {
@@ -152,9 +157,10 @@ public class PlayerMovement : MonoBehaviour
             Vector2 temp = new Vector2(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
 
             //Khởi tạo và ép kiểu đối tượng mũi tên
-            Arrow arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>();
+            arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>();
             arrow.Setup(temp, ChooseArrowDirection());
-
+            //giam magic trong tui player theo gia tri magic tieu ton cho 1 mui ten
+            playerInventory.ReduceMagic(arrow.magicCost);
             reduceMagic.Raise();//Truyền tins hiệu để giảm magic
         }
     }

@@ -149,8 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   myRigidbody: {fileID: 872988606289703324}
-  playerTransform: {fileID: 799873343837425086, guid: 44dc739afcb263643b36e8e135723e55, type: 3}
   limitProjectile: 5.5
+  lifetime: 1
+  magicCost: 1
 --- !u!114 &8417749494807961129
 MonoBehaviour:
   m_ObjectHideFlags: 0

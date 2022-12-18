@@ -11,6 +11,28 @@ public class Arrow : MonoBehaviour
     [Header("Phạm vi đạn")]
     public float limitProjectile;
 
+    [Header("Hẹn giờ hủy")]
+    public float lifetime;
+    private float lifetimeCounter;
+
+    public float magicCost;
+
+    private void Start()
+    {
+        lifetimeCounter = lifetime;
+    }
+
+    private void Update()
+    {
+        //Giam dan thoi gian theo thoi gian thuc
+        //lifetimeCounter -= Time.deltaTime;
+        ////neu thoi gian ton tai nho hon hoac bang 0
+        //if (lifetimeCounter <= 0)
+        //{
+        //    Destroy(this.gameObject);// xoa mui ten
+        //}
+    }
+
     public void Setup(Vector2 velocity, Vector3 direction)
     {
         myRigidbody.velocity = velocity.normalized * speed;

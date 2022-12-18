@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MagicPowerup : Powerup
 {
+    public Inventory playerInventory;//tui nhan vat
+    public float magicValue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,7 @@ public class MagicPowerup : Powerup
         //Kiểm tra nêú vật thể chạm vòa có tag la player
         if (other.gameObject.CompareTag("Player"))
         {
+            playerInventory.currentMagic += magicValue;
             powerupSignal.Raise();//gửi tín hiệu
             Destroy(this.gameObject);//Xóa bình nước phép
         }      

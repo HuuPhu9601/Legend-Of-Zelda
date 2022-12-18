@@ -21,6 +21,17 @@ public class Inventory : ScriptableObject
     [Header("Magic hiện tại")]
     public float currentMagic;
 
+    public void OnEnable()
+    {
+        currentMagic = maxMagic;
+    }
+
+    //Ham thuc hien giam magic trong tui player
+    public void ReduceMagic(float magicCost)
+    {
+        currentMagic -= magicCost;
+    }
+
     //Hàm thêm item vào danh sách
     public void AddItem(Item itemToAdd)
     {

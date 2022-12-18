@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Smotly Magic
   m_EditorClassIdentifier: 
   loots:
+  - thisLoot: {fileID: 3583322957945795875, guid: 820c8a4291ee6354182bf792efcbcb3d, type: 3}
+    LootChange: 50
   - thisLoot: {fileID: -1378912689214412935, guid: 951dffe56ce3973478ad9858d737137d, type: 3}
     LootChange: 25
-  - thisLoot: {fileID: 6623180147355676701, guid: 6d933daa8c165fb4898d52de17852eeb, type: 3}
-    LootChange: 50
