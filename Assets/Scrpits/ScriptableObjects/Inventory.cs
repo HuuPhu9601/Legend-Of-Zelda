@@ -32,6 +32,16 @@ public class Inventory : ScriptableObject
         currentMagic -= magicCost;
     }
 
+    //ham xu ly kiem tra co item trong tui do hay khong
+    public bool CheckForItem(Item item)
+    {
+        if (items.Contains(item))
+        {
+            return true;
+        }
+        return false;
+    }
+
     //Hàm thêm item vào danh sách
     public void AddItem(Item itemToAdd)
     {

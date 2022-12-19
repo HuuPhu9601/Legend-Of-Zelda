@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Đạn")]
     public GameObject projectile;
-
+    public Item bow;
     private Arrow arrow;
     void Start()
     {
@@ -96,8 +96,10 @@ public class PlayerMovement : MonoBehaviour
         //kiểm tra nếu nhấn nút "M (Second Weapon) đã cài đătj trong input manager" thì thực hiện bắn tên
         else if (Input.GetButtonDown("Second Weapon") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
         {
-            StartCoroutine(SecondAttackCo());//Gọi hàm tấn công mũi tên
-
+            if (playerInventory.CheckForItem(bow))//kiem tra xem trong tui do co cung ten hay khong?    
+            {
+                StartCoroutine(SecondAttackCo());//Gọi hàm tấn công mũi tên
+            }
         }
         //Kiểm tra currentstate bằng walk thì mới cho di chuyển và anim
         else if (currentState == PlayerState.walk || currentState == PlayerState.idle)
