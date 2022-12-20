@@ -25,7 +25,7 @@ public class HeartManager : MonoBehaviour
     //Hàm khởi tạo hình trái tim
     public void InitHeart()
     {
-        for (int i = 0; i < heartContainers.initialValue; i++)
+        for (int i = 0; i < heartContainers.runtimeValue; i++)
         {
             hearts[i].gameObject.SetActive(true);
             hearts[i].sprite = fullHeart;
@@ -35,10 +35,12 @@ public class HeartManager : MonoBehaviour
     //Hàm cập nhật giá trị sức khỏe của player
     public void UpdateHearts()
     {
+        InitHeart();
+
         //Số máu và số mạng bằng nhau
         float tempHealth = playerCurrentHealth.runtimeValue;
         //Thực hiện so sánh sức khỏe hiện tại và sức khỏe tối đa mà player có
-        for (int i = 0; i < playerCurrentHealth.initialValue; i++)
+        for (int i = 0; i < heartContainers.runtimeValue; i++)
         {
             if (i <= tempHealth - 1)//Đầy máu
             {

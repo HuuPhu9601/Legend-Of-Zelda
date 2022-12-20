@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8283983498095345826}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.411282, y: 2.7173767, z: 0.10371502}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -174,10 +174,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   context: {fileID: 11400000, guid: 46c1d7af26a935f439d93a45e51b9f86, type: 2}
   playerInRange: 0
-  contents: {fileID: 11400000, guid: f532c03eca7a80f4c93f55a5da92f18a, type: 2}
+  contents: {fileID: 11400000, guid: 07742617d3eb8b046afa45f31ae95c9b, type: 2}
   playerInventory: {fileID: 11400000, guid: 4e5f1612a9f375d40837b0b851f960f4, type: 2}
   isOpen: 0
-  storedOpen: {fileID: 11400000, guid: a98e288f8ee2d82428da5def6f193820, type: 2}
+  storedOpen: {fileID: 11400000, guid: 638c3c3b872a55e49a6c72c63cf09bf5, type: 2}
   raiseItem: {fileID: 11400000, guid: 8ad02eb03656aa04bbf6b3bb3e915405, type: 2}
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}
