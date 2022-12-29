@@ -1579,6 +1579,7 @@ SpriteAtlas:
   - {fileID: 851820277, guid: b191e027b1fe9b74eb045920368aaf39, type: 3}
   - {fileID: -1749161539, guid: b191e027b1fe9b74eb045920368aaf39, type: 3}
   - {fileID: -219620580, guid: b191e027b1fe9b74eb045920368aaf39, type: 3}
+  - {fileID: 21300000, guid: 183f91d8bd6d3a048a74fc85dcedb28e, type: 3}
   - {fileID: 1771123009, guid: 7e152079a94aa2a4e8d2963196c35876, type: 3}
   - {fileID: 71926171, guid: 7e152079a94aa2a4e8d2963196c35876, type: 3}
   - {fileID: 636840672, guid: 7e152079a94aa2a4e8d2963196c35876, type: 3}
@@ -3314,6 +3315,7 @@ SpriteAtlas:
   - Inner_38
   - Inner_42
   - Inner_43
+  - zeldabackground
   - attack spites_8
   - attack spites_9
   - attack spites_6

@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scrpits\Objects\Powerup.cs" />
     <Compile Include="Assets\Scrpits\Objects\Door.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\Item.cs" />
+    <Compile Include="Assets\Scrpits\Objects\HeartContainer.cs" />
     <Compile Include="Assets\Scrpits\Objects\TreasureChest.cs" />
     <Compile Include="Assets\Scrpits\EnemyScripts\PatrolLog.cs" />
     <Compile Include="Assets\Scrpits\Interactable.cs" />
@@ -92,12 +93,12 @@
     <Compile Include="Assets\Scrpits\ScriptableObjects\VectorValue.cs" />
     <Compile Include="Assets\Scrpits\Game Stuff\Room.cs" />
     <Compile Include="Assets\Scrpits\Game Stuff\MagicManager.cs" />
+    <Compile Include="Assets\Scrpits\Game Stuff\MainMenu.cs" />
     <Compile Include="Assets\Scrpits\EnemyScripts\TurretEnemy.cs" />
     <Compile Include="Assets\Scrpits\Objects\Coin.cs" />
     <Compile Include="Assets\Scrpits\Game Stuff\DungeonEnemyRoom.cs" />
     <Compile Include="Assets\Scrpits\ScriptableObjects\BoolValue.cs" />
     <Compile Include="Assets\Scrpits\Objects\RoomMove.cs" />
-    <Compile Include="Assets\Scrpits\Objects\HeartContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
